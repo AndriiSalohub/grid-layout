@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,500;1,500&family=Be+Vietnam+Pro:wght@300&family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;700&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,500;1,500&family=Be+Vietnam+Pro:wght@300&family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;700&family=Roboto+Slab&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #e0e0e0;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: minmax(19px, 20px) 4fr 5fr 3fr minmax(19px, 20px);
+    grid-template-rows: 2fr;
+    height: 80px;
+    grid-template-areas: ". top-bar-text . top-bar-icons .";
+    background-color: #2d2928;
+    margin-bottom: 80px;
+    .top-bar-text{
+        grid-area: top-bar-text;
+        align-self: center;
+        a{
+            font-size: 20px;
+            line-height: 14px;
+            color: #c4c4c4;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        :hover{
+            color: rgb(31, 180, 130);
+        }
+    }
+    .top-bar-icons{
+        grid-area: top-bar-icons;
+        align-self: center;
+        justify-self: center;
+        .header-icons-list{
+            display: grid;
+            grid-auto-flow: column;
+            li{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #fff;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.main{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 1fr 1.5fr 1fr 0.5fr;
+    .sub-header{
+        display: grid;
+        grid-template-columns: minmax(19px, 20px) 3fr 2fr minmax(19px, 20px);
+        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-areas: ". logo logo ." ". title title ." ". navigation navigation .";
+        margin-bottom: 80px;
+        .sub-header-logo{
+            grid-area: logo;
+            font-size: 100px;
+            line-height: 120px;
+            color: #282828;
+            justify-self: center;
+        }
+        .sub-header-title{
+            grid-area: title;
+            font-size: 20px;
+            line-height: 24px;
+            color: #4a4a4a;
+            justify-self: center;
+            font-family: 'Noto Serif', serif;
+        }
+        .sub-header-navigation{
+            grid-area: navigation;
+            align-self: center;
+            border-top: 3px solid #999;
+            border-bottom: 3px solid #999;
+            .navigation-list{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: grid;
+                grid-auto-flow: column;
+                li{
+                    a{
+                        font-size: 17px;
+                        line-height: 14px;
+                        color: #333333;
+                        margin-right: 50px;
+                        text-decoration: none;
+                        font-family: 'Azeret Mono', monospace;
+    
+                    }
+                    :hover{
+                        color: #33333367;
+                    }
+                }
+            }
+        }
+    }
+    .first-magazine-page{
+        display: grid;
+        grid-template-columns: minmax(20px, 80px) 0.6fr 1fr minmax(20px, 80px);
+        grid-template-rows: 1fr;
+        grid-template-areas: ". left-side right-side .";
+        .magazine-left-side{
+            grid-area: left-side;
+            .magazine-main-img{
+                background-image: url(images/main-mag-img.png);
+                width: 500px;
+                height: 320px;
+                position: relative;
+                margin-bottom: 15px;
+                .magazin-img-size{
+                    position: absolute;
+                    font-size: 36px;
+                    line-height: 36px;
+                    color: #ffffff;
+                    font-family: 'Roboto Slab', serif;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .main-title{
+                font-size: 22px;
+                line-height: 22px;
+                color: #444444;
+                font-family: 'Roboto Slab', serif;
+                margin-bottom: 20px;
+            }
+            .main-text{
+                width: 497px;
+                height: 99px;
+                font-size: 16px;
+                line-height: 19px;
+                color: #666666;
+                font-family: 'Roboto Slab', serif;
+            }
+        }
+        .magazine-right-side{
+            grid-area: right-side;
+            display: grid;
+            grid-template-columns: 20px 1fr 1fr 20px;
+            grid-template-areas: ". first-half second-half .";
+            .first-half-topics{
+                grid-area: first-half;
+                .magazine-small-topics{
+                    display: grid;
+                    grid-template-columns: 110px 1.5fr;
+                    grid-template-rows:1fr;
+                    grid-template-areas: "magazine-sub-img magazine-text-info";
+                    margin-bottom: 20px;
+                    .magazine-sub-img{
+                        grid-area: magazine-sub-img;
+                        background-image: url(images/magazine-sub-img.png);
+                        width: 100px;
+                        height: 100px;
+                        position: relative;
+                        .magazin-img-size{
+                            position: absolute;
+                            position: absolute;
+                            font-size: 16px;
+                            line-height: 16px;
+                            color: #ffffff;
+                            font-family: 'Roboto Slab', serif;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .magazine-text-info{
+                        grid-area: magazine-text-info;
+                        .main-sub-title{
+                            font-size: 22px;
+                            line-height: 22px;
+                            color: #444444;
+                            font-family: 'Roboto Slab', serif;
+                        }
+                        .main-sub-text{
+                            width: 270px;
+                            height: 66px;
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #666666;
+                            font-family: 'Roboto Slab', serif;
+                        }
+                    }
+                }
+            }
+            .second-half-topics{
+                grid-area: second-half;
+                .magazine-small-topics{
+                    display: grid;
+                    grid-template-columns: 110px 1.5fr;
+                    grid-template-rows:1fr;
+                    grid-template-areas: "magazine-sub-img magazine-text-info";
+                    margin-bottom: 20px;
+                    .magazine-sub-img{
+                        grid-area: magazine-sub-img;
+                        background-image: url(images/magazine-sub-img.png);
+                        width: 100px;
+                        height: 100px;
+                        position: relative;
+                        .magazin-img-size{
+                            position: absolute;
+                            position: absolute;
+                            font-size: 16px;
+                            line-height: 16px;
+                            color: #ffffff;
+                            font-family: 'Roboto Slab', serif;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .magazine-text-info{
+                        grid-area: magazine-text-info;
+                        .main-sub-title{
+                            font-size: 22px;
+                            line-height: 22px;
+                            color: #444444;
+                            font-family: 'Roboto Slab', serif;
+                        }
+                        .main-sub-text{
+                            width: 270px;
+                            height: 66px;
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #666666;
+                            font-family: 'Roboto Slab', serif;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    .third-magazine-page{
+        display: grid;
+        grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr 1fr minmax(20px, 40px);
+        grid-template-rows: 1fr;
+        grid-template-areas: ". first-block second-block third-block fourth-block .";
+        margin-bottom: 80px;
+        .first-summury-block{
+            grid-area: first-block;
+            margin-right: 15px;
+        }
+        .second-summury-block{
+            grid-area: second-block;
+            margin-right: 15px;
+        }
+        .third-summury-block{
+            grid-area: third-block;
+            margin-right: 15px;
+        }
+        .fourth-summury-block{
+            grid-area: fourth-block;
+            margin-right: 15px;
+        }
+        .sum-title{
+            font-size: 25px;
+            line-height: 13px;
+            color: #666666;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #999;
+        }
+        .sum-text{
+            font-size: 16px;
+            line-height: 19px;
+            color: #982216;
+        }
+    }
+}
