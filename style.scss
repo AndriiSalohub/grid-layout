@@ -1,280 +1,918 @@
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,500;1,500&family=Be+Vietnam+Pro:wght@300&family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;700&family=Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,500;1,500&family=Be+Vietnam+Pro:wght@300&family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;700&family=Roboto+Slab&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,500;1,500&family=Be+Vietnam+Pro:wght@300&family=Hammersmith+One&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&family=Outfit:wght@300;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
-body{
-    font-family: sans-serif;
-    background-color: #e0e0e0;
-}
-
 .header{
     display: grid;
-    grid-template-columns: minmax(19px, 20px) 4fr 5fr 3fr minmax(19px, 20px);
-    grid-template-rows: 2fr;
-    height: 80px;
-    grid-template-areas: ". top-bar-text . top-bar-icons .";
-    background-color: #2d2928;
-    margin-bottom: 80px;
-    .top-bar-text{
-        grid-area: top-bar-text;
-        align-self: center;
-        a{
-            font-size: 20px;
-            line-height: 14px;
-            color: #c4c4c4;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-        :hover{
-            color: rgb(31, 180, 130);
-        }
+    background-image: url(images/header-background.png);
+    grid-template-rows: 1fr 4fr;
+    min-height: 100vh;
+    block-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 65px;
+    &::before{
+        content: '';
+        background-color: rgb(0, 0, 0);
+        opacity: 0.349;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
-    .top-bar-icons{
-        grid-area: top-bar-icons;
-        align-self: center;
+    &-navigation{
+        z-index: 1;
         justify-self: center;
-        .header-icons-list{
+        padding-top: 40px;
+        .header-list{
             display: grid;
             grid-auto-flow: column;
             li{
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: #fff;
-                margin-left: 10px;
+                list-style: none;
+                padding-left: 20px;
+                a{
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #ffffff;
+                    font-weight: 400;
+                    font-family: "Montserrat";
+                    &:hover{
+                        color: rgb(0, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+    &-content{
+        z-index: 1;
+        justify-self: center;
+        align-self: center;
+        &-title{
+            font-size: 35px;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: "Montserrat";
+            margin-bottom: 15px;
+        }
+        &-subtitle{
+            text-align: center;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 400;
+            font-family: "Montserrat";
+            margin-bottom: 25px;
+        }
+        &-btn{
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 200px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0);
+            color: #fff;
+            border: 1px solid #fff;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.452);
             }
         }
     }
 }
 
-.main{
+.about-us{
     display: grid;
-    grid-template-columns:1fr;
-    grid-template-rows: 1fr 1.5fr 1fr 0.5fr;
-    .sub-header{
-        display: grid;
-        grid-template-columns: minmax(19px, 20px) 3fr 2fr minmax(19px, 20px);
-        grid-template-rows: 3fr 1fr 1fr;
-        grid-template-areas: ". logo logo ." ". title title ." ". navigation navigation .";
-        margin-bottom: 80px;
-        .sub-header-logo{
-            grid-area: logo;
-            font-size: 100px;
-            line-height: 120px;
-            color: #282828;
-            justify-self: center;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 20px;
+    margin-bottom: 60px;
+    &-top-bar{
+        &-subtitle{
+            font-size: 15px;
+            color: #c4c4c4;
+            font-weight: 500;
+            font-family: "Montserrat";
+            margin-bottom: 10px;
         }
-        .sub-header-title{
-            grid-area: title;
+        &-title{
+            font-size: 18px;
+            color: #000000;
+            font-weight: 500;
+            font-family: "Montserrat";
+            margin-bottom: 20px;
+        }
+        &-text{
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #5b5b5c;
+            font-weight: 400;
+            font-family: "Montserrat";
+        }
+        &-text-first-paragraph{
+            margin-bottom: 15px;
+        }
+        &-btn{
+            display: none;
+        }
+    }
+    &-img{
+        background-image: url(images/about-us-img/about-us-img-mobile.png);
+        background-repeat: no-repeat;
+        width: 280px;
+        height: 382px;
+        justify-self: center;
+        margin-top: 30px;
+    }
+}
+
+.photos-of-our-travels{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    margin-bottom: 65px;
+    &-top-bar{
+        &-title{
             font-size: 20px;
-            line-height: 24px;
-            color: #4a4a4a;
-            justify-self: center;
-            font-family: 'Noto Serif', serif;
+            color: #000000;
+            font-weight: 700;
+            font-family: "Montserrat";
+            text-align: center;
+            margin-bottom: 10px;
         }
-        .sub-header-navigation{
-            grid-area: navigation;
-            align-self: center;
-            border-top: 3px solid #999;
-            border-bottom: 3px solid #999;
-            .navigation-list{
-                padding-top: 20px;
-                padding-bottom: 20px;
-                display: grid;
-                grid-auto-flow: column;
-                li{
-                    a{
-                        font-size: 17px;
-                        line-height: 14px;
-                        color: #333333;
-                        margin-right: 50px;
-                        text-decoration: none;
-                        font-family: 'Azeret Mono', monospace;
-    
-                    }
-                    :hover{
-                        color: #33333367;
-                    }
-                }
+        &-subtitle{
+            font-size: 15px;
+            color: #5b5b5c;
+            font-weight: 500;
+            font-family: "Montserrat";
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    &-photos{
+        .first-photo{
+            background-image: url(images/hut.png);
+        }
+        .second-photo{
+            background-image: url(images/boat.png);
+        }
+        .third-photo{
+            background-image: url(images/view-on-boat.png);
+        }
+        .fourth-photo{
+            display: none;
+        }
+        .fifth-photo{
+            display: none;
+        }
+        .sixth-photo{
+            display: none;
+        }
+        .seventh-photo{
+            display: none;
+        }
+        .eight-photo{
+            display: none;
+        }
+        .ninth-photo{
+            display: none;
+        }
+        .travels-photo{
+            width: 280px;
+            height: 280px;
+            background-position: center;
+            margin: 10px auto;
+        }
+        .view-more-photos{
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 200px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 1px solid #000;
+            &:hover{
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                border: 1px solid rgb(255, 255, 255);
             }
         }
     }
-    .first-magazine-page{
+}
+
+.travel-with-us{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    &-top-bar{
+        &-title{
+            font-size: 22px;
+            color: #000000;
+            font-weight: 700;
+            font-family: "Montserrat";
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        &-subtitle{
+            font-size: 15px;
+            color: #5b5b5c;
+            font-weight: 500;
+            font-family: "Montserrat";
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    &-advantages{
         display: grid;
-        grid-template-columns: minmax(20px, 80px) 0.6fr 1fr minmax(20px, 80px);
-        grid-template-rows: 1fr;
-        grid-template-areas: ". left-side right-side .";
-        .magazine-left-side{
-            grid-area: left-side;
-            .magazine-main-img{
-                background-image: url(images/main-mag-img.png);
-                width: 500px;
-                height: 320px;
-                position: relative;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        &-first{
+            margin-bottom: 30px;
+            &-img{
+                background-image: url(images/first-advantage-mobile.png);
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 144px;
+                background-position: center;
                 margin-bottom: 15px;
-                .magazin-img-size{
-                    position: absolute;
-                    font-size: 36px;
-                    line-height: 36px;
-                    color: #ffffff;
-                    font-family: 'Roboto Slab', serif;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
             }
-            .main-title{
-                font-size: 22px;
-                line-height: 22px;
-                color: #444444;
-                font-family: 'Roboto Slab', serif;
+            &-title{
+                font-size: 15px;
+                color: #000000;
+                font-weight: 700;
+                font-family: "Montserrat";
                 margin-bottom: 20px;
             }
-            .main-text{
-                width: 497px;
-                height: 99px;
-                font-size: 16px;
-                line-height: 19px;
-                color: #666666;
-                font-family: 'Roboto Slab', serif;
+            &-text{
+                font-size: 15px;
+                color: #848484;
+                font-weight: 400;
+                font-family: "Montserrat";
+                margin-bottom: 15px;
+            }
+            &-btn{
+                width: 200px;
+                height: 50px;
+                background-color: #dddcdc;
+                border: none;
+                &:hover{
+                    background-color: grey;
+                    color: #fff;
+                }
             }
         }
-        .magazine-right-side{
-            grid-area: right-side;
-            display: grid;
-            grid-template-columns: 20px 1fr 1fr 20px;
-            grid-template-areas: ". first-half second-half .";
-            .first-half-topics{
-                grid-area: first-half;
-                .magazine-small-topics{
-                    display: grid;
-                    grid-template-columns: 110px 1.5fr;
-                    grid-template-rows:1fr;
-                    grid-template-areas: "magazine-sub-img magazine-text-info";
-                    margin-bottom: 20px;
-                    .magazine-sub-img{
-                        grid-area: magazine-sub-img;
-                        background-image: url(images/magazine-sub-img.png);
-                        width: 100px;
-                        height: 100px;
-                        position: relative;
-                        .magazin-img-size{
-                            position: absolute;
-                            position: absolute;
-                            font-size: 16px;
-                            line-height: 16px;
-                            color: #ffffff;
-                            font-family: 'Roboto Slab', serif;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                        }
-                    }
-                    .magazine-text-info{
-                        grid-area: magazine-text-info;
-                        .main-sub-title{
-                            font-size: 22px;
-                            line-height: 22px;
-                            color: #444444;
-                            font-family: 'Roboto Slab', serif;
-                        }
-                        .main-sub-text{
-                            width: 270px;
-                            height: 66px;
-                            font-size: 16px;
-                            line-height: 19px;
-                            color: #666666;
-                            font-family: 'Roboto Slab', serif;
-                        }
-                    }
+        &-second{
+            &-img{
+                background-image: url(images/second-advantage-mobile.png);
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 144px;
+                background-position: center;
+                margin-bottom: 15px;
+            }
+            &-title{
+                font-size: 15px;
+                color: #000000;
+                font-weight: 700;
+                font-family: "Montserrat";
+                margin-bottom: 20px;
+            }
+            &-text{
+                font-size: 15px;
+                color: #848484;
+                font-weight: 400;
+                font-family: "Montserrat";
+                margin-bottom: 15px;
+            }
+            &-btn{
+                width: 200px;
+                height: 50px;
+                background-color: #dddcdc;
+                border: none;
+                &:hover{
+                    background-color: grey;
+                    color: #fff;
                 }
             }
-            .second-half-topics{
-                grid-area: second-half;
-                .magazine-small-topics{
-                    display: grid;
-                    grid-template-columns: 110px 1.5fr;
-                    grid-template-rows:1fr;
-                    grid-template-areas: "magazine-sub-img magazine-text-info";
-                    margin-bottom: 20px;
-                    .magazine-sub-img{
-                        grid-area: magazine-sub-img;
-                        background-image: url(images/magazine-sub-img.png);
-                        width: 100px;
-                        height: 100px;
-                        position: relative;
-                        .magazin-img-size{
-                            position: absolute;
-                            position: absolute;
-                            font-size: 16px;
-                            line-height: 16px;
-                            color: #ffffff;
-                            font-family: 'Roboto Slab', serif;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                        }
-                    }
-                    .magazine-text-info{
-                        grid-area: magazine-text-info;
-                        .main-sub-title{
-                            font-size: 22px;
-                            line-height: 22px;
-                            color: #444444;
-                            font-family: 'Roboto Slab', serif;
-                        }
-                        .main-sub-text{
-                            width: 270px;
-                            height: 66px;
-                            font-size: 16px;
-                            line-height: 19px;
-                            color: #666666;
-                            font-family: 'Roboto Slab', serif;
-                        }
-                    }
-                }
-            }
-
         }
     }
-    .third-magazine-page{
-        display: grid;
-        grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr 1fr minmax(20px, 40px);
-        grid-template-rows: 1fr;
-        grid-template-areas: ". first-block second-block third-block fourth-block .";
-        margin-bottom: 80px;
-        .first-summury-block{
-            grid-area: first-block;
-            margin-right: 15px;
-        }
-        .second-summury-block{
-            grid-area: second-block;
-            margin-right: 15px;
-        }
-        .third-summury-block{
-            grid-area: third-block;
-            margin-right: 15px;
-        }
-        .fourth-summury-block{
-            grid-area: fourth-block;
-            margin-right: 15px;
-        }
-        .sum-title{
-            font-size: 25px;
-            line-height: 13px;
-            color: #666666;
+}
+
+.book-discounter-tour{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 20px;
+    background-color: #f4f4f4;
+    margin-bottom: 65px;
+    &-top-bar{
+        &-title{
+            font-size: 20px;
+            color: #000000;
+            font-weight: 500;
+            font-family: "Montserrat";
             margin-bottom: 10px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #999;
+            text-align: center;
         }
-        .sum-text{
-            font-size: 16px;
-            line-height: 19px;
-            color: #982216;
+        &-subtitle{
+            font-size: 14px;
+            color: #5b5b5c;
+            font-weight: 400;
+            font-family: "Montserrat";
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+    &-form{
+        form{
+            input[type=text]{
+                width:280px;
+                height: 50px;
+                display: block;
+                border: 1px solid #7a7a7a;
+                font-size: 15px;
+                padding-left: 10px;
+                margin: 20px auto;
+            }
+            button{
+                width: 140px;
+                height: 40px;            
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 0);
+                background-color: #3a4047;
+                border: 1px solid #7a7a7a;
+                color: #fff;
+                &:hover{
+                    background-color: #7a7a7a;
+                    border: 1px solid #3a4047;
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 40px;
+    align-content: center;
+    &-content{
+        &-first-paragraph{
+            text-align: center;
+            font-size: 18px;
+            color: #000000;
+            font-weight: 400;
+            font-family: "Montserrat";
+        }
+        &-second-paragraph{
+            font-size: 18px;
+            text-align: center;
+            color: #000000;
+            font-weight: 400;
+            font-family: "Montserrat";
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .header{
+        &-navigation{
+            .header-list{
+                li{
+                    padding-left: 40px;
+                }
+            }
+        }
+        &-content{
+            &-title{
+                font-size: 55px;
+            }
+            &-subtitle{
+                font-size: 20px;
+                color: #ffffff;
+            }
+        }
+    }
+    .about-us{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+        &-content{
+            margin-top: 40px;
+            &-btn{
+                display: block;
+                margin-top: 20px;
+                width: 200px;
+                height: 50px;
+                background-color: rgba(255, 255, 255, 0);
+                color: #000;
+                border: 1px solid #000;
+                &:hover{
+                    background-color: rgb(0, 0, 0);
+                    color: rgb(255, 255, 255);
+                    border: 1px solid rgb(255, 255, 255);
+                }
+            }
+        }
+        &-img{
+            background-image: url(images/about-us-img/about-us-img-tablet.png);
+            width: 370px;
+            height: 505px;
+            margin-top: 0px;
+            padding-left: 10px;
+        }
+    }
+    .photos-of-our-travels{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        justify-content: start;
+        &-photos{
+            display: grid;
+            grid-template-columns:repeat(2, 1fr);
+            .first-photo{
+                background-image: url(images/hut.png);
+            }
+            .second-photo{
+                background-image: url(images/boat.png);
+            }
+            .third-photo{
+                background-image: url(images/view-on-boat.png);
+            }
+            .fourth-photo{
+                background-image: url(images/venice.png);
+                display: block;
+            }
+            .fifth-photo{
+                background-image: url(images/greece.png);
+                display: block;
+            }
+            .sixth-photo{
+                background-image: url(images/rock.png);
+                display: block;
+            }
+            .seventh-photo{
+                background-image: url(images/road.png);
+                display: block;
+            }
+            .eight-photo{
+                background-image: url(images/jungle.png);
+                display: block;
+            }
+            .ninth-photo{
+                background-image: url(images/river.png);
+                display: block;
+                grid-column: 1/3;
+            }
+            .travels-photo{
+                width: 350px;
+                height: 300px;
+                background-position: center;
+            }
+            .view-more-photos{
+                display: none;
+            }
+        }
+    }
+    .travel-with-us{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-bottom: 65px;
+        &-top-bar{
+            &-title{
+                font-size: 22px;
+                color: #000000;
+                font-weight: 700;
+                font-family: "Montserrat";
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            &-subtitle{
+                font-size: 15px;
+                color: #5b5b5c;
+                font-weight: 500;
+                font-family: "Montserrat";
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+        &-advantages{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            &-first{
+                margin-bottom: 30px;
+                &-img{
+                    background-image: url(images/first-advantage.png);
+                    height: 400px;
+                }
+                &-title{
+                    font-size: 15px;
+                    color: #000000;
+                    font-weight: 700;
+                    font-family: "Montserrat";
+                    margin-bottom: 20px;
+                }
+                &-text{
+                    font-size: 15px;
+                    color: #848484;
+                    font-weight: 400;
+                    font-family: "Montserrat";
+                    margin-bottom: 15px;
+                }
+                &-btn{
+                    width: 200px;
+                    height: 50px;
+                    background-color: #dddcdc;
+                    border: none;
+                    &:hover{
+                        background-color: grey;
+                        color: #fff;
+                    }
+                }
+            }
+            &-second{
+                &-img{
+                    background-image: url(images/second-advantage.png);
+                    height: 400px;
+                }
+                &-title{
+                    font-size: 15px;
+                    margin-bottom: 20px;
+                }
+                &-text{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .book-discounter-tour{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 50px 20px;
+        margin-bottom: 65px;
+        &-top-bar{
+            align-self: center;
+        }
+    }    
+}
+
+@media (min-width:992px) {
+    .header{
+        &-content{
+            &-title{
+                font-size: 70px;
+            }
+            &-subtitle{
+                font-size: 30px;
+                color: #ffffff;
+            }
+        }
+    }
+    .about-us{
+        display: grid;
+        padding: 0 40px;
+        &-content{
+            &-subtitle{
+                font-size: 18px;
+            }
+            &-title{
+                font-size: 23px;
+            }
+            &-text{
+                font-size: 18px;
+            }
+        }
+        &-img{
+            background-image: url(images/about-us-img/about-us-img-laptop.png);
+            background-repeat: no-repeat;
+            width: 500px;
+            height: 700px;
+            justify-self: center;
+        }
+    }
+    .photos-of-our-travels{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+        &-photos{
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            .first-photo{
+                background-image: url(images/hut.png);
+                width: 320px;
+            }
+            .second-photo{
+                background-image: url(images/boat.png);
+                width: 600px;
+                justify-self: start;
+                grid-column: 2/4;
+            }
+            .third-photo{
+                background-image: url(images/view-on-boat.png);
+                grid-column: 1/3;
+                width: 645px;
+            }
+            .fourth-photo{
+                background-image: url(images/venice.png);
+                width: 293px;
+            }
+            .fifth-photo{
+                background-image: url(images/greece.png);
+                width: 320px;
+            }
+            .sixth-photo{
+                background-image: url(images/rock.png);
+                grid-column: 2/4;
+                width: 620px;
+            }
+            .seventh-photo{
+                background-image: url(images/road.png);
+                width: 313px;
+            }
+            .eight-photo{
+                background-image: url(images/jungle.png);
+                width: 310px;
+            }
+            .ninth-photo{
+                background-image: url(images/river.png);
+                grid-column: 3/4;
+                width: 310px;
+            }
+            .travels-photo{
+                height: 300px;
+                background-position: center;
+            }
+            .view-more-photos{
+                display: none;
+            }
+        }
+    }
+    .travel-with-us{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+        margin-bottom: 65px;
+        &-top-bar{
+            &-subtitle{
+                margin-bottom: 30px;
+            }
+        }
+        &-advantages{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            grid-template-rows: 1fr;
+            &-first{
+                margin-bottom: 30px;
+                &-img{
+                    background-image: url(images/first-advantage-small-laptop.png);
+                    width: 420px;
+                    height: 216px;
+                }
+            }
+            &-second{
+                &-img{
+                    background-image: url(images/second-advantage-small-laptop.png);
+                    width: 420px;
+                    height: 216px;
+                }
+            }
+        }
+    }
+    .book-discounter-tour{
+        padding: 20px 40px;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media (min-width:1200px) {
+    .about-us{
+        padding-left: 120px;
+        padding-right: 120px;
+        &-top-bar{
+            padding-top: 60px;
+            &-subtitle{
+                font-size: 22px;
+            }
+            &-title{
+                font-size: 30px;
+            }
+            &-text{
+                font-size: 22px;
+            }
+        }
+        &-img{
+            background-image: url(images/about-us-img/about-us-img-laptop.png);
+            width: 500px;
+            height: 700px;
+            margin-top: 0px;
+            justify-self: center;
+        }
+    }
+    .photos-of-our-travels{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 120px;
+        &-top-bar{
+            &-title{
+                font-size: 32px;
+                letter-spacing: 8px;
+                color: #000000;
+                font-weight: 700;
+                font-family: "Montserrat";
+                text-align: center;
+            }
+            &-subtitle{
+                font-size: 28px;
+                letter-spacing: 4px;
+                color: #5b5b5c;
+                font-weight: 500;
+                font-family: "Montserrat";
+                text-align: center;
+            }
+        }
+        &-photos{
+            display: grid;
+            grid-template-columns:repeat(5, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            .first-photo{
+                background-image: url(images/hut.png);
+                grid-column: 1/2;
+            }
+            .second-photo{
+                background-image: url(images/boat.png);
+                grid-column: 2/4;
+                width: 100%;
+            }
+            .third-photo{
+                background-image: url(images/view-on-boat.png);
+                grid-column: 4/6;
+                width: 100%;
+            }
+            .fourth-photo{
+                background-image: url(images/venice.png);
+                grid-row: 2/3;
+                grid-column: 4/6;
+                width: 100%;
+            }
+            .fifth-photo{
+                background-image: url(images/greece.png);
+                grid-column: 3/4;
+                width: 100%;
+            }
+            .sixth-photo{
+                background-image: url(images/rock.png);
+                grid-row: 2/2;
+                grid-column: 1/3;
+                width: 100%;
+            }
+            .seventh-photo{
+                background-image: url(images/road.png);
+                grid-row: 3/3;
+                grid-column: 1/3;
+                width: 100%;
+            }
+            .eight-photo{
+                background-image: url(images/jungle.png);
+                grid-column: 3/5;
+                width: 100%;
+            }
+            .ninth-photo{
+                background-image: url(images/river.png);
+                width: 100%;
+                grid-column: 5/6;
+            }
+            .travels-photo{
+                height: 400px;
+                background-position: center;
+            }
+            .view-more-photos{
+                display: none;
+            }
+        }
+    }
+    .travel-with-us{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 120px;
+        margin-bottom: 65px;
+        &-top-bar{
+            &-title{
+                font-size: 32px;
+                letter-spacing: 8px;
+                color: #000000;
+                font-weight: 700;
+                font-family: "Montserrat";
+                text-align: center;
+            }
+            &-subtitle{
+                font-size: 28px;
+                letter-spacing: 4px;
+                color: #5b5b5c;
+                font-weight: 500;
+                font-family: "Montserrat";
+                text-align: center;
+            }
+        }
+        &-advantages{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            grid-template-rows: 1fr;
+            &-first{
+                margin-bottom: 30px;
+                &-img{
+                    background-image: url(images/first-advantage.png);
+                    width: 100%;
+                    height: 400px;
+                }
+                &-title{
+                    font-size: 19px;
+                    color: #000000;
+                    font-weight: 700;
+                    font-family: "Montserrat";
+                }
+                &-text{
+                    font-size: 19px;
+                    color: #848484;
+                    font-weight: 400;
+                    font-family: "Montserrat";
+                }
+            }
+            &-second{
+                &-img{
+                    background-image: url(images/second-advantage.png);
+                    width: 100%;
+                    height: 400px;
+                }
+                &-title{
+                    font-size: 19px;
+                    letter-spacing: 4px;
+                    color: #000000;
+                    font-weight: 700;
+                    font-family: "Montserrat";
+                }
+                &-text{
+                    font-size: 19px;
+                    color: #848484;
+                    font-weight: 400;
+                    font-family: "Montserrat";
+                }
+            }
+        }
+    }
+    .book-discounter-tour{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: 80px 100px;
+        background-color: #f4f4f4;
+        margin-bottom: 65px;
+        &-top-bar{
+            &-title{
+                font-size: 20px;
+                color: #000000;
+                font-weight: 500;
+                font-family: "Montserrat";
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            &-subtitle{
+                font-size: 14px;
+                color: #5b5b5c;
+                font-weight: 400;
+                font-family: "Montserrat";
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        &-form{
+            form{
+                input[type=text]{
+                    width:280px;
+                    height: 50px;
+                    display: inline;
+                    border: 1px solid #7a7a7a;
+                    font-size: 15px;
+                    padding-left: 10px;
+                    margin: 20px auto;
+                }
+                button{
+                    width: 140px;
+                    height: 40px;            
+                    position: relative;
+                    left: 10%;
+                    background-color: #3a4047;
+                    border: 1px solid #7a7a7a;
+                    color: #fff;
+                    &:hover{
+                        background-color: #7a7a7a;
+                        border: 1px solid #3a4047;
+                    }
+                }
+            }
         }
     }
 }
